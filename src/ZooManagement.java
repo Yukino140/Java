@@ -13,7 +13,7 @@ public class ZooManagement {
         return this.zooName + " comporte " +this.nbrCages+ " cages ";
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ZooFullException {
         Animal lion = new Animal();
         lion.setName("Simba");
         lion.setAge(8);
@@ -27,8 +27,8 @@ public class ZooManagement {
         Animal dog = new Animal("Canine", "Snoopy", 2, true);
 
 
-        System.out.println(myZoo.addAnimal(lion));
-        System.out.println(myZoo.addAnimal(dog));
+       /* System.out.println(myZoo.addAnimal(lion));
+        System.out.println(myZoo.addAnimal(dog));*/
 
         myZoo.displayAnimals();
 
@@ -44,6 +44,7 @@ public class ZooManagement {
 
         myZoo.addAnimal(lion);
         myZoo.addAnimal(dog);
+        myZoo.addAnimal(dog2);
         myZoo.addAnimal(dog2);
         myZoo.displayAnimals();
 

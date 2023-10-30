@@ -10,7 +10,7 @@ public class Zoo {
     }
 
     public Zoo(String name, String city) {
-        animals = new Animal[NUMBER_OF_CAGES];
+        animals = new Animal[3];
         this.name = name;
         this.city = city;
     }
@@ -60,14 +60,17 @@ public class Zoo {
         System.out.println("Name: " + name + ", City: " + city + ", N° Cages: " + NUMBER_OF_CAGES + " N° animals: " + nbrAnimals);
     }
 
-    public boolean addAnimal(Animal animal) {
+    public void addAnimal(Animal animal) throws ZooFullException,InvalidAgeException {
         if (searchAnimal(animal) != -1)
-            return false;
+            throw new ZooFullException("This element exist");
         if (isZooFull())
-            return false;
+            throw new ZooFullException("The Table is full");
+        if(animal.getAge()<0)
+            throw new InvalidAgeException();
         animals[nbrAnimals] = animal;
         nbrAnimals++;
-        return true;
+
+
     }
 
     public boolean removeAnimal(Animal animal) {
