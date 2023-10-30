@@ -1,4 +1,4 @@
-public non-sealed abstract class Aquatic extends Animal {
+public non-sealed abstract class Aquatic extends Animal implements Carnivore<Food> {
 
     protected String habitat;
 
@@ -26,4 +26,5 @@ public non-sealed abstract class Aquatic extends Animal {
             return false;
         }
     }
+
 }

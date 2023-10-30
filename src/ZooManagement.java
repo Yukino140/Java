@@ -13,7 +13,7 @@ public class ZooManagement {
         return this.zooName + " comporte " +this.nbrCages+ " cages ";
     }
 
-    public static void main(String[] args) throws ZooFullException {
+    public static void main(String[] args) throws ZooFullException, InvalidAgeException {
         Animal lion = new Animal();
         lion.setName("Simba");
         lion.setAge(8);
@@ -45,7 +45,7 @@ public class ZooManagement {
         myZoo.addAnimal(lion);
         myZoo.addAnimal(dog);
         myZoo.addAnimal(dog2);
-        myZoo.addAnimal(dog2);
+
         myZoo.displayAnimals();
 
 
@@ -66,5 +66,9 @@ public class ZooManagement {
         System.out.println(penguin);
         myZoo.addAquaticAnimal(dolphin);
     myZoo.displayAquaticAnimals();
+    Aquatic aq=new Penguin("Spheniscidae", "Skipper", 3, true, "Ocean", 25.3f);
+    aq.eatMeat(Food.MEAT);
+    Terrestrial tr=new Terrestrial("Panda", "Narla", 4, true, 2);
+    tr.eatPlantAndMeet(Food.BOTH);
     }
 }
