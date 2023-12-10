@@ -1,9 +1,16 @@
-public non-sealed abstract class Aquatic extends Animal implements Carnivore<Food> {
+public non-sealed class Aquatic extends Animal  {
+
+    public String getHabitat() {
+        return habitat;
+    }
+
+    public void setHabitat(String habitat) {
+        this.habitat = habitat;
+    }
 
     protected String habitat;
 
-    public Aquatic() {
-    }
+
 
     public Aquatic(String family, String name, int age, boolean isMammal, String habitat) {
         super(family, name, age, isMammal);
@@ -11,7 +18,9 @@ public non-sealed abstract class Aquatic extends Animal implements Carnivore<Foo
     }
 
 
-    public abstract void swim();
+    public  void swim(){
+        System.out.println("the Aquatic swim");
+    };
 
     @Override
     public String toString() {
@@ -19,12 +28,6 @@ public non-sealed abstract class Aquatic extends Animal implements Carnivore<Foo
     }
 
 
-    public boolean equals(Aquatic a1) {
-        if((a1.getName()==this.getName())&&(a1.getAge()==this.getAge())&&(a1.habitat==this.habitat)){
-            return true;
-        }else{
-            return false;
-        }
-    }
+
 
 }

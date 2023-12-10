@@ -5,9 +5,7 @@ public class Zoo {
     private String name, city;
     private int nbrAnimals;
 
-    private Animal[] aquaticAnimals=new Animal[10];
-    public Zoo() {
-    }
+
 
     public Zoo(String name, String city) {
         animals = new Animal[3];
@@ -60,13 +58,8 @@ public class Zoo {
         System.out.println("Name: " + name + ", City: " + city + ", N° Cages: " + NUMBER_OF_CAGES + " N° animals: " + nbrAnimals);
     }
 
-    public void addAnimal(Animal animal) throws ZooFullException,InvalidAgeException {
-        if (searchAnimal(animal) != -1)
-            throw new ZooFullException("This element exist");
-        if (isZooFull())
-            throw new ZooFullException("The Table is full");
-        if(animal.getAge()<0)
-            throw new InvalidAgeException();
+    public void addAnimal(Animal animal)  {
+
         animals[nbrAnimals] = animal;
         nbrAnimals++;
 
@@ -109,42 +102,8 @@ public class Zoo {
     public String toString() {
         return "Zoo{ Name: " + name + ", City: " + city + ", N° Cages: " + NUMBER_OF_CAGES + " N° animals: " + nbrAnimals + "}";
     }
-    public void addAquaticAnimal(Aquatic aquatic){
-        for (int x=0; x < this.aquaticAnimals.length; x++)
-            if (x != this.aquaticAnimals.length - 1){
-                this.aquaticAnimals[x]=aquatic;
-            }
-    }
-    public void displayAquaticAnimals() {
-        System.out.println("List of Aquatic animals of " + name + ":");
-        for (int i = 0; i < nbrAnimals; i++) {
-            System.out.println(aquaticAnimals[i]);
-        }
-    }
-    public float maxPenguinSwimmingDepth(){
-        float d=0;
-        for(int x=0; x < this.aquaticAnimals.length; x++){
-            if(this.aquaticAnimals[x] instanceof Penguin){
-                Penguin p=(Penguin) this.aquaticAnimals[x];
-                if(p.getSwimmingDepth()>d){
-                    d=p.getSwimmingDepth();
-                }
-            }
-        }
-        return d;
-    }
-    public void displayNumberOfAquaticsByType(){
-        int nbdolphines=0;
-        int nbpenguins=0;
-        for (int x=0; x < this.aquaticAnimals.length; x++){
-            if(this.aquaticAnimals[x] instanceof Penguin){
-                nbpenguins+=1;
-            }else{
-                nbdolphines+=1;
-            }
-        }
-        System.out.printf("le nombre des dophins est "+nbdolphines);
-        System.out.printf("le nombre des penguins est "+nbpenguins);
 
-    }
+
+
+
 }

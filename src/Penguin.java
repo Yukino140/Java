@@ -2,15 +2,11 @@ public class Penguin extends Aquatic {
 
         private float swimmingDepth;
 
-    public Penguin() {
-    }
+
 
     public Penguin(String family, String name, int age, boolean isMammal, String habitat, float swimmingDepth) {
         super(family, name, age, isMammal, habitat);
         this.swimmingDepth = swimmingDepth;
-    }
-    public void swim(){
-        System.out.printf("the penguin swims");
     }
 
     @Override
@@ -21,8 +17,8 @@ public class Penguin extends Aquatic {
         return this.swimmingDepth;
     }
 
-    @Override
-    public void eatMeat(Food meat) {
-        System.out.println("eat"+meat);
+
+    public void setSwimmingDepth(float swimmingDepth) {
+        this.swimmingDepth = swimmingDepth;
     }
 }

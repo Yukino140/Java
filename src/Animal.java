@@ -4,15 +4,7 @@ public sealed class Animal permits Aquatic, Terrestrial {
     private int age;
     private boolean isMammal;
 
-
     public Animal() {
-    }
-
-    public Animal(String family, String name, int age, boolean isMammal) {
-        this.family = family;
-        this.name = name;
-        this.age = age;
-        this.isMammal = isMammal;
     }
 
 
@@ -32,6 +24,23 @@ public sealed class Animal permits Aquatic, Terrestrial {
         this.name = name;
     }
 
+    public boolean isMammal() {
+        return isMammal;
+    }
+
+    public void setMammal(boolean mammal) {
+        isMammal = mammal;
+    }
+
+    public Animal(String family, String name, int age, boolean isMammal) {
+        this.family = family;
+        this.name = name;
+        this.age = age;
+        this.isMammal = isMammal;
+    }
+
+
+
     public int getAge() {
         return age;
     }
@@ -43,17 +52,14 @@ public sealed class Animal permits Aquatic, Terrestrial {
             this.age = age;
     }
 
-    public boolean isMammal() {
-        return isMammal;
-    }
-
-    public void setMammal(boolean mammal) {
-        isMammal = mammal;
-    }
-
 
     @Override
     public String toString() {
-        return "Animal{ Family:" + family + ", Name: " + name + ", Age: " + age + ", isMammal: " + isMammal + "}";
+        return "Animal{" +
+                "family='" + family + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", isMammal=" + isMammal +
+                '}';
     }
 }
