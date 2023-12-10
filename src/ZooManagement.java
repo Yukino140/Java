@@ -9,53 +9,16 @@ public class ZooManagement {
         this.zooName=zooName;
     }
 
-    public String toString() {
-        return this.zooName + " comporte " +this.nbrCages+ " cages ";
-    }
+
 
     public static void main(String[] args) {
-        Animal lion = new Animal();
-        lion.setName("Simba");
-        lion.setAge(8);
-        lion.setFamily("Cats");
-        lion.setMammal(true);
+        Scanner sc = new Scanner(System.in);  // Create a Scanner object
+        System.out.println("Enter zooname");
+        String zooname=sc.nextLine();
+        System.out.println("Enter nbCages");
+        int nbCages=sc.nextInt();
 
-        Zoo myZoo = new Zoo("Wildlife Park", "Ariana",25);
-        Zoo notMyZoo = new Zoo("WaterPark", "Siliana",25);
-
-
-        Animal dog = new Animal("Canine", "Snoopy", 2, true);
-
-
-       /* System.out.println(myZoo.addAnimal(lion));
-        System.out.println(myZoo.addAnimal(dog));*/
-
-        myZoo.displayAnimals();
-
-        System.out.println(myZoo.searchAnimal(dog));
-        Animal dog2 = new Animal("Canine", "lll", 2, true);
-        System.out.println(myZoo.searchAnimal(dog2));
-
-//           System.out.println(myZoo.removeAnimal(dog));
-        myZoo.displayAnimals();
-
-
-        System.out.println(myZoo);
-
-        myZoo.addAnimal(lion);
-        myZoo.addAnimal(dog);
-        myZoo.addAnimal(dog2);
-
-        myZoo.displayAnimals();
-
-
-
-
-
-
-
-
-
-
+        ZooManagement z=new ZooManagement(nbCages,zooname);
+        System.out.printf(z.zooName+" comporte "+z.nbrCages+" cages");
     }
 }
