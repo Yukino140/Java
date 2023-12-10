@@ -20,8 +20,8 @@ public class ZooManagement {
         lion.setFamily("Cats");
         lion.setMammal(true);
 
-        Zoo myZoo = new Zoo("Wildlife Park", "Ariana");
-        Zoo notMyZoo = new Zoo("WaterPark", "Siliana");
+        Zoo myZoo = new Zoo("Wildlife Park", "Ariana",25);
+        Zoo notMyZoo = new Zoo("WaterPark", "Siliana",25);
 
 
         Animal dog = new Animal("Canine", "Snoopy", 2, true);
@@ -49,9 +49,7 @@ public class ZooManagement {
         myZoo.displayAnimals();
 
 
-        myZoo.setName("Belvedere Park");
-        Zoo notMyZoo1 = Zoo.comparerZoo(myZoo, notMyZoo);
-        System.out.println(notMyZoo1);
+
 
 
 
