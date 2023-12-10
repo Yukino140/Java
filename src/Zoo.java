@@ -1,24 +1,21 @@
+import java.util.Arrays;
 
 public class Zoo {
 
-    public static final int NUMBER_OF_CAGES = 25;
+    public int nbrCages ;
     private Animal[] animals;
     private String name, city;
     private int nbrAnimals;
 
 
 
-    public Zoo(String name, String city) {
-        animals = new Animal[3];
+    public Zoo(String name, String city, int nbrCages) {
+        animals = new Animal[nbrCages];
         this.name = name;
         this.city = city;
+        this.nbrCages = nbrCages;
     }
 
-    public static Zoo comparerZoo(Zoo z1, Zoo z2) {
-        if (z1.nbrAnimals > z2.nbrAnimals)
-            return z1;
-        return z2;
-    }
 
     public Animal[] getAnimals() {
         return animals;
@@ -55,7 +52,7 @@ public class Zoo {
     }
 
     void displayZoo() {
-        System.out.println("Name: " + name + ", City: " + city + ", N° Cages: " + NUMBER_OF_CAGES + " N° animals: " + nbrAnimals);
+        System.out.println("Name: " + name + ", City: " + city + ", N° Cages: " + nbrCages + " N° animals: " + nbrAnimals);
     }
 
     public void addAnimal(Animal animal)  {
@@ -94,16 +91,15 @@ public class Zoo {
         return index;
     }
 
-    public boolean isZooFull() {
-        return nbrAnimals == NUMBER_OF_CAGES;
-    }
 
     @Override
     public String toString() {
-        return "Zoo{ Name: " + name + ", City: " + city + ", N° Cages: " + NUMBER_OF_CAGES + " N° animals: " + nbrAnimals + "}";
+        return "Zoo{" +
+                "nbrCages=" + nbrCages +
+                ", animals=" + Arrays.toString(animals) +
+                ", name='" + name + '\'' +
+                ", city='" + city + '\'' +
+                ", nbrAnimals=" + nbrAnimals +
+                '}';
     }
-
-
-
-
 }
