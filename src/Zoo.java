@@ -33,10 +33,9 @@ public class Zoo {
     }
 
     public void setName(String name) {
-        if (name.isBlank())
+
             System.out.println("The Zoo name cannot be empty");
-        else
-            this.name = name;
+
     }
 
     public String getCity() {
@@ -60,11 +59,11 @@ public class Zoo {
     }
 
     public void addAnimal(Animal animal)  {
-        if(!isZooFull()) {
+
             animals[nbrAnimals] = animal;
             nbrAnimals++;
 
-        }
+
     }
 
     public boolean removeAnimal(Animal animal) {
