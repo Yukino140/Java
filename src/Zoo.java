@@ -1,3 +1,4 @@
+
 public class Zoo {
 
     public static final int NUMBER_OF_CAGES = 25;
@@ -59,11 +60,11 @@ public class Zoo {
     }
 
     public void addAnimal(Animal animal)  {
+        if(!isZooFull()) {
+            animals[nbrAnimals] = animal;
+            nbrAnimals++;
 
-        animals[nbrAnimals] = animal;
-        nbrAnimals++;
-
-
+        }
     }
 
     public boolean removeAnimal(Animal animal) {

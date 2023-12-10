@@ -1,11 +1,11 @@
-public class Penguin extends Aquatic {
+public class Penguin {
 
         private float swimmingDepth;
 
 
 
-    public Penguin(String family, String name, int age, boolean isMammal, String habitat, float swimmingDepth) {
-        super(family, name, age, isMammal, habitat);
+    public Penguin( float swimmingDepth) {
+
         this.swimmingDepth = swimmingDepth;
     }
 
